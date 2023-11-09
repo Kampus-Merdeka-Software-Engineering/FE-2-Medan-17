@@ -14,7 +14,7 @@ body{
 }
 
 nav{
-	background: #0082e6;
+	background: darkblue;
 	height: 80Spx;
 	width: 100%;
 	position: fixed;
@@ -86,12 +86,11 @@ nav ul li a:hover{
 	justify-content: center;
 	top: 260px;
 	left: 562px;
-	-webkit-text-stroke: 0.5px gray;
+	
 }
 .overlay-button{
 	position: absolute;
 	font-size: 25px;
-	z-index: 2;
 	padding: 10px 20px;
 	border-radius: 25px;
 	cursor: pointer;
@@ -107,4 +106,191 @@ nav ul li a:hover{
 .overlay-button:hover{
 	background-color: darkblue;
 	color: lightcoral;
+}
+
+
+.about-container{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	z-index: 2;
+}
+.image{
+	flex: 1;
+	text-align: center;
+	padding-top: 240px;
+	padding-left: 70px;
+	padding-right: 70px;
+	
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.container{
+	flex: 2;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.container h2{
+	font-size: 32px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: darkblue;
+	text-align: center;
+	margin-top: 120px;
+	margin-bottom: 20px;	
+}
+.container h3{
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: lightcoral;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+p{
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #888;
+	text-align: justify;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	line-height: 1.5;
+}
+.button{
+	margin: 0 auto;
+}
+.read-button{
+	background-color: #0082e6;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 20px;
+    cursor: pointer;
+}
+.read-button:hover{
+	background-color: darkblue;
+	color: lightcoral;
+}
+
+.package {
+	margin-top: 40px;
+}
+.package-banner {
+	padding: 0;
+	background-color: palevioletred;
+	text-align: center;
+	color: white;
+	height: 180px;
+	flex-wrap: wrap;
+}
+.features {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 40px;
+	padding-top: 5px;
+  }
+  
+  .feature {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+  }
+  
+  .featureIcon {
+	width: 90px;
+	height: 90px;
+  }
+  
+  .featureTitle {
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 5px;
+  }
+  
+  .featureDesc {
+	color: #333;
+	width: 60%;
+	height: 100px;
+	font-size: 15px;
+  }
+
+
+  .all-products{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.product{
+	overflow: hidden;
+	background: #ffffff;
+	color: #2c3e50 ;
+	text-align: center;
+	width: 240px;
+	height: 400px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1.2rem;
+	margin: 2rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product .product-price{
+	font-size: 18px;
+	color: lightcoral;
+	
+}
+.product-title{
+	font-size: 14px;
+	color:#888
+	
+}
+
+.products h2{
+	font-size: 32px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: darkblue;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.product:hover img{
+	scale:  1.1;
+}
+
+.product:hover {
+	box-shadow: 5px 15px 25px #eeeeee;
+}
+
+.product img {
+	height: 200px;
+	margin: 1rem;
+	transition: all 0.3s;
+}
+
+.product a:link, .product a:visited{
+	color: #ececec;
+	display: inline-block;
+	text-decoration: none;
+	background-color:#2c3e50;
+	padding: 1.2rem 3rem;
+	border-radius: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	font-size: 14px;
+	transition: all 0.2s;
+}
+
+.product a:hover{
+	transform: scale(1.1);
 }
