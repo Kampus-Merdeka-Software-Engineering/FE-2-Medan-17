@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cake Shop</title>
 	<link rel="stylesheet"  type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 
@@ -17,6 +18,8 @@
 		<li><a href="#banner">Home</a></li>
 		<li><a href="#about-us">About</a></li>
 		<li><a href="#">Product</a></li>
+		<li><a href="#">Review</a></li>
+		<li><a href="#">Gallery</a></li>
 		<li><a href="#">Contact Us</a></li>
 	</ul>
   </nav>
@@ -95,7 +98,7 @@
 				</div>
 			</div>
 			<div class="product">
-				<img src="assets/images/product1.png">
+				<img src="assets/images/product2.png">
 				<div class="product-info">Strawberry Cheesecake
 					<h4 class="product-title">This is Strawberry Cheesecake
 					</h4>
@@ -113,7 +116,7 @@
 				</div>
 			</div>
 			<div class="product">
-				<img src="assets/images/product1.png">
+				<img src="assets/images/product2.png">
 			    <div class="product-info">Strawberry Cheesecake
 					<h4 class="product-title">This is Strawberry Cheesecake
 					</h4>
@@ -121,9 +124,173 @@
 					<a class="product-btn" href="#">Buy Now</a>
 				</div>
 			</div>
+			<div class="product">
+				<img src="assets/images/product2.png">
+			    <div class="product-info">Chocolate Cake
+					<h4 class="product-title">This is Chocolate Cake
+					</h4>
+					<p class="product-price">$11</p>
+					<a class="product-btn" href="#">Buy Now</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="assets/images/product2.png">
+			    <div class="product-info">Chocolate Cake
+					<h4 class="product-title">This is Chocolate Cake
+					</h4>
+					<p class="product-price">$11</p>
+					<a class="product-btn" href="#">Buy Now</a>
+				</div>
+			</div>
+				<div class="product">
+					<img src="assets/images/product2.png">
+					<div class="product-info">Chocolate Cake
+						<h4 class="product-title">This is Chocolate Cake
+						</h4>
+						<p class="product-price">$11</p>
+						<a class="product-btn" href="#">Buy Now</a>
+					</div>
+				</div>
+				<div class="product">
+					<img src="assets/images/product2.png">
+					<div class="product-info">Chocolate Cake
+						<h4 class="product-title">This is Chocolate Cake
+						</h4>
+						<p class="product-price">$11</p>
+						<a class="product-btn" href="#">Buy Now</a>
+					</div>
+				</div>
+		   </div>			
+	    </section>
+
+	<!-- review -->
+	<div id="page" class="site">
+		<div class="container">
+			<div class="review">
+				<div class="head">
+					<h2>Reviews</h2>
+					<h3>What They Say About Us..</h3>
+				</div>
+				<div class="body swiper">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<div class="wrapper">
+								<div class="thumbnail">
+									<img src="assets/images/review1.jpg" alt="">
+								</div>
+								<div class="aside">
+									<p>I recently had the pleasure of visiting the local cake shop, 
+									   and the experience was nothing short of delightful. From the moment I stepped inside, 
+									   the sweet aroma of freshly baked treats enveloped the cozy space, 
+									   setting the stage for a delightful culinary journey. </p>
+									   <div class="name">
+										<h4>Kira Kosarin</h4>
+										<p>Photographer</p>
+									   </div>
+								</div>
+							</div>
+						</li>
+            <li class="swiper-slide">
+							<div class="wrapper">
+								<div class="thumbnail">
+									<img src="assets/images/review2.jpg" alt="">
+								</div>
+								<div class="aside">
+									<p>What truly stood out, however, was not just the visual appeal but the exquisite taste of the cakes. 
+									   Each slice was a symphony of flavors, perfectly moist and balanced. 
+									   The attention to detail in the decorations was evident, 
+									   reflecting the skill and passion of the talented bakers. </p>
+									   <div class="name">
+										<h4>Amer Paquito</h4>
+										<p>Finance Specialist</p>
+									   </div>
+								</div>
+							</div>
+						</li>
+            <li class="swiper-slide">
+							<div class="wrapper">
+								<div class="thumbnail">
+									<img src="assets/images/review3.jpg" alt="">
+								</div>
+								<div class="aside">
+									<p> The staff was warm, friendly, and knowledgeable, adding a personal touch to the overall experience. 
+										Whether you're celebrating a special occasion or simply craving a sweet treat, 
+										this cake shop is a haven for dessert enthusiasts</p>
+									   <div class="name">
+										<h4>Yael Novkha</h4>
+										<p>Fashion Designer</p>
+									   </div>
+								</div>
+							</div>
+						</li>
+					</ul>
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+				</div>
+			</div>
 		</div>
-		</div>			
-	</section>
+	</div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Your Swiper initialization code here
+        var mySwiper = new Swiper('.swiper-container', {
+            // Your Swiper configuration options here
+        });
+    });
+</script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      autoHeight:true,
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+      el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+      el: '.swiper-scrollbar',
+      },
+    });
+  </script>
+
+<div class="grid-wrap">
+	<h2>Gallery</h2>
+	<ul>
+		<li><img src="assets/images/gallery1.jpg" /></li>
+		<li><img src="assets/images/gallery2.jpg" /></li>
+		<li><img src="assets/images/gallery3.jpg" /></li>
+		<li><img src="assets/images/gallery4.jpg" /></li>
+		<li><img src="assets/images/gallery5.jpg" /></li>
+		<li><img src="assets/images/gallery6.jpg" /></li>
+		<li><img src="assets/images/gallery7.jpg" /></li>
+		<li><img src="assets/images/gallery8.jpg" /></li>
+		<li><img src="assets/images/gallery9.jpg" /></li>
+		<li><img src="assets/images/gallery10.jpg" /></li>
+		<li><img src="assets/images/gallery11.jpg" /></li>
+		
+	
+	</ul>
+  </div>
+
+
+
+
+
+
+
+	
 		
 			
 		
