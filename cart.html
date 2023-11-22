@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | DeliCake✨</title>
+    <link rel="stylesheet"  type="text/css" href="css/cart.css">
+        <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="assets/images/favicon.ico" type="image/png">
+</head>
+<body>
+    <div class="cart-header">
+        <p class="logo"><img src="assets/images/giphy.gif" alt="delicake" /></p>
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+    </div>
+    <div class="cart-container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+                <div class="proceed-button">
+                    <button onclick="goToBuyPage()">Proceed to Buy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="go-back-main">
+        <button onclick="goBack()">
+            <span>&larr; </span>
+          </button>
+        </div>
+
+
+
+
+
+  
+   
+    <script src="js/script.js"></script>
+</body>
+</html>

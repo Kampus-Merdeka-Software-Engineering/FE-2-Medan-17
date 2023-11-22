@@ -1,0 +1,104 @@
+<!-- buy.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | DeliCake✨</title>
+    <link rel="stylesheet"  type="text/css" href="css/cart.css">
+        <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="assets/images/favicon.ico" type="image/png">
+</head>
+<body>
+  <!-- Buy form header -->
+  <div class="buy-header">
+    <p class="logo"><img src="assets/images/giphy.gif" alt="delicake" /></p>
+    <h1>Order Details</h1>
+  </div>
+  <div class="go-back-cart">
+    <button onclick="goBackCart()">
+        <span>&larr; </span>
+      </button>
+    </div>
+
+
+
+
+
+
+<!--order details -->
+
+<div class="checkout-container">
+  <div class="left">
+      <h3>BILLING ADDRESS</h3>
+      <form onsubmit="return validatePaymentForm();">
+        Full name
+        <input type="text" name="fullName" placeholder="Enter name">
+        Email
+        <input type="text" name="email" placeholder="Enter email">
+        Address
+        <input type="text" name="address" placeholder="Enter address">
+        City
+        <input type="text" name="city" placeholder="Enter City">
+        State
+        <input type="text" name="state" placeholder="Enter State">
+        Zip code
+        <input type="number" name="zipCode" placeholder="Zip code">
+      </form>
+  </div>
+  <div class="right">
+      <h3>PAYMENT</h3>
+      <form>
+          Accepted Payment <br>
+          <img src="assets/images/shopeepay.png" width="50" height="auto">
+          <img src="assets/images/ovo.png" width="45" height="auto">
+          <img src="assets/images/gopay.png" width="60" height="auto">
+          <img src="assets/images/bca.png" width="60" height="auto">
+          <img src="assets/images/dana.png" width="60" height="auto">
+          
+          <br><br>
+
+          <p>Select Your Payment</p>
+          <label>
+              <input type="radio" name="paymentType" value="shopeepay">
+              <img src="assets/images/shopeepay.png" width="50" height="auto" alt="shopeepay">
+          </label>
+          <label>
+              <input type="radio" name="paymentType" value="ovo">
+              <img src="assets/images/ovo.png" width="45" height="auto" alt="ovo">
+          </label>
+          <label>
+            <input type="radio" name="paymentType" value="gopay">
+            <img src="assets/images/gopay.png" width="60" height="auto" alt="gopay">
+        </label>
+        <label>
+          <input type="radio" name="paymentType" value="bca">
+          <img src="assets/images/bca.png" width="60" height="auto" alt="bca">
+      </label>
+      <label>
+        <input type="radio" name="paymentType" value="dana">
+        <img src="assets/images/dana.png" width="60" height="auto" alt="bca">
+    </label>
+      <br>
+      Your E-wallet PIN
+      <input type="text" name="" placeholder="Enter PIN">
+          
+      <input type="submit" name="" value="Proceed to Checkout" onclick="proceedToCheckout();">
+    </form>
+      </form>
+  </div>
+</div>
+
+
+
+  
+
+  <!-- link to js file -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
