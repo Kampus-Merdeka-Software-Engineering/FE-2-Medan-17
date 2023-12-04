@@ -4,7 +4,17 @@ function navigate(sectionId) {
     section.scrollIntoView({ behavior: 'smooth' });
   }
 
- 
+//navigate shop now 
+function navigateToOurProducts() {
+  // Use window.location.href to navigate to the desired section
+  window.location.href = 'index.html#our-products';
+}
+//navigate to footer
+function navigateToFooter() {
+  // Use window.location.href to navigate to the desired section
+  window.location.href = 'index.html#footer';
+}
+
 // lightbox image gallery
 document.addEventListener('DOMContentLoaded', function () {
   let currentImageIndex = 0;
@@ -392,6 +402,10 @@ function goBackCart() {
       alert('Please complete your form.');
     }
   }
+
+
+
+ 
 
 
 

@@ -5,7 +5,6 @@
 	list-style: none;
 	box-sizing: border-box;
 	box-shadow: rgb(0 2 / 35%) 0px 20px 30px -10px;
-	;
 	
 }
 
@@ -16,6 +15,7 @@ html{
 body{
 	font-family: Arial, Helvetica, sans-serif;
 }
+
 /* navbar */
 nav{
 	background: darkblue;
@@ -57,6 +57,19 @@ nav ul li a{
 nav ul li a:hover{
 	color: lightcoral;
 }
+.popup-login {
+	background-color: #3498db;
+	color: #ffffff;
+	padding: 10px 15px;
+	border:1px solid #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+  }
+  
+  .popup-login:hover {
+	background-color: palevioletred;
+  }
 
 /* banner homepage */
 .banner{
