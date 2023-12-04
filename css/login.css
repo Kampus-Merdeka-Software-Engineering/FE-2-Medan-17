@@ -10,7 +10,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    background: url('/assets/images/gallery1.jpg');
+    background: url('/assets/images/login1.jpg');
     background-size: cover;
     background-position:center;
 }
