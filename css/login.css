@@ -10,7 +10,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    background: url('/assets/images/login1.jpg');
+    background: url('https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-17/assets/images/login1.jpg');
     background-size: cover;
     background-position:center;
 }
