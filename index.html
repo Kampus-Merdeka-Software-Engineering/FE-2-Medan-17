@@ -365,20 +365,20 @@
 			<p>delicake@gmail.com</p>
 		</div>
 	</div>
-	<div class="contact-container" id="contact">
-		<form class="contact-form" onsubmit="return validateForm()">
+	<div class="contact-container" id="contact" >
+		<form id="contactForm" class="contact-form" action="/contact-us" onsubmit="submitForm(event)">
 			<label for="name">Name:</label>
-			<input type="text" id="name" name="name"  placeholder="John Doe" oninput="fillInput('name')" >
+			<input type="text" id="name" name="name"  placeholder="John Doe" required >
 			<p class="error-msg" id="name-error">Please fill your name</p>
 
 			
 			<label for="email">Email:</label>
-			<input type="email" id="email" name="email"  placeholder="your@gmail.com" oninput="fillInput('email')">
+			<input type="email" id="email" name="email"  placeholder="your@gmail.com" required>
 			<p class="error-msg" id="email-error">Please fill your email</p>
 			
 	
 			<label for="message">Message:</label>
-			<textarea id="message" name="message"  placeholder="Write us a message.." oninput="fillInput('message')"></textarea>
+			<textarea id="message" name="message"  placeholder="Write us a message.." required></textarea>
 			<p class="error-msg" id="message-error">Please fill your message</p>
 			
 			<div class="submit-button">
@@ -393,6 +393,30 @@
 	</div>
 	
 	
+	<!-- chatbot -->
+	
+	<button class="chatbot-toggler">
+		<span class="fas fa-comment"></span>
+		<span class="fas fa-close"></span>
+	</button>
+	<div class="chatbot">
+		<header>
+			<h2>🍰deliCare ✨</h2>
+		</header>
+			<ul class="chatbox">
+				<li class="chat incoming">
+					<span class="fas fa-robot"></span>
+					<p>Hi there 👋 <br>How can I help you today? </p>
+				</li>
+			</ul>
+			<div class="chat-input">
+				<textarea placeholder="Enter a message..." required></textarea>
+				<span id="send-btn" class="fas fa-paper-plane"></span>
+
+			</div>
+	</div>
+
+
 	<!-- footer -->
 	<footer>
 		<div class="footer-container" id="footer">
@@ -442,22 +466,96 @@
 	
 
   
-
-
-
-
-			
-
-
-
-
-
-
-
-
-
-
-	
 		<script src="js/script.js"></script>
+		<script src="js/chatbot.js" defer></script>
+
+		<script>
+			document.getElementById('registrationForm').addEventListener('submit', function (event) {
+			  event.preventDefault(); // Prevent the default form submission
+		
+			  // Get form data
+			  const formData = {
+				name: document.getElementById('name').value,
+				email: document.getElementById('email').value,
+				message: document.getElementById('message').value,
+			  };
+		
+			  // Make a POST request to the server
+			  fetch('/submitForm', {
+				method: 'POST',
+				headers: {
+				  'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			  })
+				.then(response => {
+				  if (!response.ok) {
+					throw new Error('Network response was not ok');
+				  }
+				  return response.json();
+				})
+				.then(data => {
+				  console.log(data);
+				  // Handle success (e.g., show a success message to the user)
+				})
+				.catch(error => {
+				  console.error('There was a problem with the fetch operation:', error);
+				  // Handle error (e.g., show an error message to the user)
+				});
+			});
+		  </script>
+
+<script>
+	function submitForm(event) {
+	  event.preventDefault();
+  
+	  // Get form data
+	  const formData = new FormData(event.target);
+  
+	  // Convert form data to a plain object
+	  const data = {};
+	  formData.forEach((value, key) => {
+		data[key] = value;
+	  });
+  
+	  // Send the form data to your backend using fetch
+	  fetch('http://localhost:5000/contact-us', {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(data),
+	  })
+		.then(response => {
+		  if (!response.ok) {
+			throw new Error('Network response was not ok');
+		  }
+		
+		})
+		.then(data => {
+		  console.log('Success:', data);
+		  //send alert for success
+		  alert('Message succeed!');
+		
+
+		  // Handle success, e.g., show a success message to the user
+		})
+		.catch(error => {
+		  console.error('Error:', error);
+		  // Handle error, e.g., show an error message to the user
+		});
+	}
+  
+	// Function to fill input and hide error message
+	function fillInput(inputId) {
+	  const input = document.getElementById(inputId);
+	  const errorElement = document.getElementById(`${inputId}-error`);
+  
+	  if (input.value.trim() !== '') {
+		errorElement.style.display = 'none';
+	  }
+	}
+  </script>
+	
 	</body>
 </html>

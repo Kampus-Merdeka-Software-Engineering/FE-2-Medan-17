@@ -4,6 +4,7 @@ function navigate(sectionId) {
     section.scrollIntoView({ behavior: 'smooth' });
   }
 
+
 //navigate shop now 
 function navigateToOurProducts() {
   // Use window.location.href to navigate to the desired section
@@ -229,23 +230,48 @@ price: 25,
 }
 ];
 
-const categories = [...new Set(product.map((item)=>
-  {return item}))]
-  let i=0;
-document.getElementById('root').innerHTML = categories.map((item)=>
-{
-  var {image, title, price} = item;
-  return(
-      `<div class='box'>
-          <div class='img-box'>
-              <img class='images' src=${image}></img>
-          </div>
-      <div class='bottom'>
-      <p>${title}</p>
-      <h2>$ ${price}.00</h2>`+
-      "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
-      `</div>
-      </div>`
+
+
+//send to database
+const addProductToBackend = async (product) => {
+  try {
+    const response = await fetch('http://localhost:5000/addProduct', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    });
+
+    if (response.ok) {
+      const newProduct = await response.json();
+      console.log('Product added successfully:', newProduct);
+    } else {
+      console.error('Failed to add product:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Error adding product:', error.message);
+  }
+};
+
+
+
+
+const categories = [...new Set(product.map((item) => { return item }))]
+let i = 0;
+document.getElementById('root').innerHTML = categories.map((item) => {
+  var { image, title, price } = item;
+  return (
+    `<div class='box'>
+        <div class='img-box'>
+            <img class='images' src=${image}></img>
+        </div>
+    <div class='bottom'>
+    <p>${title}</p>
+    <h2>$ ${price}.00</h2>` +
+    "<button onclick='addtocart(" + (i++) + ")'>Add to cart</button>" +
+    `</div>
+    </div>`
   )
 }).join('')
 

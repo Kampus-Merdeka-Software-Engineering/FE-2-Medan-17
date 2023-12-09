@@ -9,6 +9,7 @@
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" /> 
     <link rel="icon" href="assets/images/favicon.ico" type="image/png">
+
 </head>
 <body>
     <header>
@@ -30,7 +31,7 @@
         <span class="close"><i class="fa-solid fa-xmark"></i></span>
         <div class="form-box login">
             <h2>Login</h2>
-            <form action="#" method="post">
+            <form id="loginForm" action=" " onsubmit="handleLoginForm(event)" method="post">
                 <div class="input-form">
                     <span class="icon"><i class="fa-solid fa-envelope"></i></span>
                     <input type="email" name="email" required>
@@ -56,10 +57,10 @@
         </div>
         <div class="form-box register">
             <h2>Registration</h2>
-            <form action="#" method="post">
+            <form id="registrationForm" action="/register" method="post">   
                 <div class="input-form">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" name="Username" required>
+                    <input type="text" name="username" required>
                     <label>Username</label>
                 </div>
                 <div class="input-form">
@@ -88,6 +89,7 @@
         const registerlink = document.querySelector('.register-link');
         const btnpopup = document.querySelector('.popup-login');
         const iconclose = document.querySelector('.close');
+        const btnRegistration = document.querySelector('.btn-registration');
 
         registerlink.addEventListener('click', ()=>{
             wrapper.classList.add('active');
@@ -101,6 +103,67 @@
         iconclose.addEventListener('click', ()=>{
             wrapper.classList.remove('active-popup');
         });
+        btnRegistration.addEventListener('click', (event) => {
+    // Handle registration button click event
+    // You can add your form submission logic here
+  
+});
     </script>
+    <!-- Inside your HTML file -->
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+  
+      // Get form data
+      const username = document.getElementsByName('username')[0].value;
+      const email = document.getElementsByName('email')[0].value; // Assuming you have an email field in your form
+      const password = document.getElementsByName('password')[0].value;
+  
+      try {
+        // Send a POST request to the server
+        const response = await fetch('http://localhost:5000/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, email, password }), // Use the correct field names
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          console.log('Registration successful:', data.msg);
+          alert('User created successfully! Please login.');
+          // Handle success, e.g., show a success message to the user
+          window.location.hash = '/login.html#loginForm';
+          //relocate to login form
+         
+        } else {
+          console.error('Registration failed:', data.error);
+          // Handle failure, e.g., show an error message to the user
+        }
+      } catch (error) {
+        console.error('Error during registration:', error);
+        // Handle unexpected errors
+      }
+    });
+  </script>
+
+<script>
+    function handleLoginForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Show an alert
+        alert('You are logged in!');
+        // Redirect to index.html after clicking OK
+        window.location.href = 'index.html';
+    }
+</script>
+
+
+
+
+
+
 </body>
 </html>
