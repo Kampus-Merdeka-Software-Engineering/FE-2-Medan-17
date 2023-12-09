@@ -11,6 +11,7 @@ The main function of this website is to enable users to purchase online order by
 
 
 
+
 ### 🚀 Tools & Tech Used 🚀
 **Code Editor** : Visual Studio Code
 
@@ -34,6 +35,8 @@ The main function of this website is to enable users to purchase online order by
 
 
 
+
+
 ### 🪄 Our Features 🎲
 ~ **Account Management** : User login and registration for personalized experiences
 
@@ -46,6 +49,8 @@ The main function of this website is to enable users to purchase online order by
 ~ **Chatbot** : Adding user experience in helping users to answer related questions
 
 ~ **Contact Us** : Helping users for further info, reaching us directly
+
+
 
 
 
