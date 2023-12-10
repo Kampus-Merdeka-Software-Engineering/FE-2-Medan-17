@@ -285,6 +285,9 @@ button:hover{
     box-sizing: border-box;
     font-family: sans-serif;
 }
+.buy-header{
+    margin-bottom:13px;
+}
 
 .checkout-container {
     background: white;
@@ -294,7 +297,7 @@ button:hover{
     justify-content: space-between;
     align-items: flex-start;
     padding: 0.5rem 2rem; 
-    margin-top: 20px; 
+    margin-top: 0px; 
 }
 
 .left {

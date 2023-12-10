@@ -374,60 +374,61 @@ function goBackCart() {
 }
 
 // order details validation
-
-
-  function validateBillingAddress() {
-    var fullName = document.querySelector('input[name="fullName"]').value;
-    var email = document.querySelector('input[name="email"]').value;
-    var address = document.querySelector('input[name="address"]').value;
-    var city = document.querySelector('input[name="city"]').value;
-    var state = document.querySelector('input[name="state"]').value;
-    var zipCode = document.querySelector('input[name="zipCode"]').value;
-
-    // Check if any of the fields are empty
-    if (!fullName || !email || !address || !city || !state || !zipCode) {
-      alert('Please fill in all billing address fields.');
-      return false;
-    }
-
-    return true;
+function validatePaymentForm(event) {
+  var paymentType = document.querySelector('input[name="paymentType"]:checked');
+ 
+  // Check if payment type is selected
+  if (!paymentType) {
+    alert('Please select a payment type.');
+    event.preventDefault(); // Prevent the form from submitting
   }
+}
 
-  function validatePaymentForm() {
-    var paymentType = document.querySelector('input[name="paymentType"]:checked');
-    var ewalletNumber = document.querySelector('input[name="ewalletNumber"]').value;
 
-    // Check if payment type is selected
-    if (!paymentType) {
-      alert('Please select a payment type.');
-      return false;
-    }
+function autoScroll(nextInput) {
+  // Get the form element
+  const form = document.getElementById('billing-form');
 
-    // Check if e-wallet number is provided
-    if (ewalletNumber.trim() === '') {
-      alert('Please enter your e-wallet number.');
-      return false;
-    }
+  // Find the next input field
+  const nextInputField = form.elements[nextInput];
 
-    // You can add more specific validation for the e-wallet number if needed
-
-    return true;
+  // Check if the next input field exists
+  if (nextInputField) {
+      // Scroll to the next input field
+      nextInputField.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+}
 
-  function validateForm() {
-    return validateBillingAddress() && validatePaymentForm();
-  }
 
-  function proceedToCheckout() {
-    if (validateForm()) {
-      // Form is valid, show success message and proceed
-      alert('Checkout successful!');
-      // Add code to redirect to the next page or perform further actions
-    } else {
-      // Form is not valid, show error message
-      alert('Please complete your form.');
-    }
-  }
+function proceedToCheckout() {
+  // Show first success message
+  alert('Checkout successful! Waiting for payment..');
+
+  // Show second thank you message after the user clicks "OK" on the first alert
+  setTimeout(function () {
+    alert('Thank you for your purchase!🥰');
+    // Redirect to the index.html page
+    window.location.href = 'index.html';
+  }, 0);
+}
+  
+
+
+
+   
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
 
 
 

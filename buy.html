@@ -29,9 +29,9 @@
 <!--order details -->
 
 <div class="checkout-container">
-  <div class="left">
+  <div id="billing-section" class="left">
       <h3>BILLING ADDRESS</h3>
-      <form onsubmit="return validatePaymentForm();">
+      <form onsubmit="validateForm(event, 'billing-section');">
         Full name
         <input type="text" name="fullName" placeholder="Enter name" required>
         Email
@@ -40,15 +40,13 @@
         <input type="text" name="address" placeholder="Enter address" required>
         City
         <input type="text" name="city" placeholder="Enter City" required>
-        State
-        <input type="text" name="state" placeholder="Enter State" required>
         Zip code
         <input type="number" name="zipCode" placeholder="Zip code" required>
       </form>
   </div>
   <div class="right">
       <h3>PAYMENT</h3>
-      <form>
+      <form onsubmit="validatePaymentForm(event);">
           Accepted Payment <br>
           <img src="assets/images/shopeepay.png" width="50" height="auto">
           <img src="assets/images/ovo.png" width="45" height="auto">
@@ -65,19 +63,19 @@
           </label>
           <label>
               <input type="radio" name="paymentType" value="ovo" required>
-              <img src="assets/images/ovo.png" width="45" height="auto" alt="ovo">
+              <img src="assets/images/ovo.png" width="45" height="auto" alt="ovo" >
           </label>
           <label>
             <input type="radio" name="paymentType" value="gopay" required>
-            <img src="assets/images/gopay.png" width="60" height="auto" alt="gopay">
+            <img src="assets/images/gopay.png" width="60" height="auto" alt="gopay" >
         </label>
         <label>
           <input type="radio" name="paymentType" value="bca" required>
-          <img src="assets/images/bca.png" width="60" height="auto" alt="bca">
+          <img src="assets/images/bca.png" width="60" height="auto" alt="bca" >
       </label>
       <label>
         <input type="radio" name="paymentType" value="dana" required>
-        <img src="assets/images/dana.png" width="60" height="auto" alt="bca">
+        <img src="assets/images/dana.png" width="60" height="auto" alt="bca" >
     </label>
       <br>
   
@@ -87,7 +85,6 @@
       </form>
   </div>
 </div>
-
 
 
   

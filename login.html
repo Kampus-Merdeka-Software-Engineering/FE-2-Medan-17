@@ -105,18 +105,18 @@
         });
         btnRegistration.addEventListener('click', (event) => {
     // Handle registration button click event
-    // You can add your form submission logic here
+   
   
 });
     </script>
-    <!-- Inside your HTML file -->
+ 
 <script>
     document.getElementById('registrationForm').addEventListener('submit', async function (event) {
       event.preventDefault();
   
       // Get form data
       const username = document.getElementsByName('username')[0].value;
-      const email = document.getElementsByName('email')[0].value; // Assuming you have an email field in your form
+      const email = document.getElementsByName('email')[0].value; 
       const password = document.getElementsByName('password')[0].value;
   
       try {
@@ -126,7 +126,7 @@
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ username, email, password }), // Use the correct field names
+          body: JSON.stringify({ username, email, password }), 
         });
   
         const data = await response.json();
