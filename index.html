@@ -13,11 +13,7 @@
 </head>
 <body>
 
-<!-- DISCLAIMER
-	we already deploy our backend to railway
-	but, facing some issues with the mySQL app, so the URL can't work out
-	this is our railway URL "delicake-17.up.railway.app"
-	so that we use local instead at port 5000 -->
+
 
 	<!-- navbar -->
   <nav>	
@@ -525,7 +521,7 @@
 	  });
   
 	  // Send the form data to your backend using fetch
-	  fetch('http://localhost:5000/contact-us', {
+	  fetch('https://delicake.up.railway.app//contact-us', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json',
